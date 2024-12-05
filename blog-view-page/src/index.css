@@ -11,6 +11,7 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
 }
 
 a {
@@ -26,7 +27,7 @@ body {
   margin: 0;
   display: flex;
   place-items: center;
-  min-width: 320px;
+  min-width: 100vw;
   min-height: 100vh;
 }
 
@@ -65,4 +66,34 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+#root{
+  display:grid;
+  grid-template-columns: 70% 30%;
+  grid-template-rows: 25% 60% 15%;
+  grid-template-areas: 'nav nav' 'main aside' 'footer footer';
+  min-width: 100vw;
+  min-height: 100vh;
+}
+nav{
+  grid-area: nav;
+  display: flex;
+  flex-direction: column;
+}
+nav>div{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+footer{
+  grid-area: footer;
+  align-self: center;
+  text-align: center;
+}
+main{
+  grid-area: main;
+}
+aside{
+  grid-area: aside;
 }
